@@ -1,7 +1,7 @@
 # IGGUpdateChecker
 lol idk why i made this
 
-repl: https://replit.com/@Nameless9000/IGGUpdateChecker
+what this does is send a request to the igg-games game request page and search if a game has been updated lol
 
 # How to use:
 
