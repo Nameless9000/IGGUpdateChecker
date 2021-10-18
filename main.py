@@ -6,7 +6,7 @@ import datetime
 import requests
 from bs4 import BeautifulSoup
 
-DISCORD_ID = "655861269030502453" # leave blank if you don't want ping
+DISCORD_ID = "" # leave blank if you don't want ping
 
 url = "https://igg-games.com/request-pcgames-pc6.html"
 
