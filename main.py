@@ -10,6 +10,9 @@ DISCORD_ID = "" # leave blank if you don't want ping
 
 url = "https://igg-games.com/request-pcgames-pc6.html"
 
+f = open('gamelist.json')
+games = json.load(f)
+
 def sendWebhook(game,link):
 	webhookUrl = os.environ['WEBHOOK']
 
@@ -51,9 +54,6 @@ def getVersionHash(string):
 	return num
 
 def main():
-	f = open('gamelist.json')
-	games = json.load(f)
-
 	http = urllib3.PoolManager()
 
 	response = http.request('GET', url)
@@ -72,7 +72,7 @@ def main():
 	with open('gamelist.json', 'w', encoding='utf-8') as f:
 		json.dump(games, f, ensure_ascii=False, indent=4)
 
-	f.close()
-
 if __name__ == "__main__":
 	main()
+
+f.close()
