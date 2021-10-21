@@ -6,7 +6,7 @@ import datetime
 import requests
 from bs4 import BeautifulSoup
 
-DISCORD_ID = "" # leave blank if you don't want ping
+DISCORD_ID = "655861269030502453" # leave blank if you don't want ping
 
 url = "https://igg-games.com/request-pcgames-pc6.html"
 
@@ -65,7 +65,10 @@ def main():
 		for query in games:
 			if link.text.find(query) > -1:
 				ver = getVersionHash(link.text)
+				if ver == games[query]: continue
 				if ver > games[query]:
+					print(games[query])
+					print(ver)
 					games[query] = ver
 					sendWebhook(link.text, link["href"])
 	
